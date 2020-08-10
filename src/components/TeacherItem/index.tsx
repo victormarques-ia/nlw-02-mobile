@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Image, Text, Linking } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 
-import styles from './styles';
+import { Container, Profile, Avatar,ProfileInfo, Name, Subject, Bio, Footer, Price, PriceValue, ButtonsContainer, FavoriteButton, ContactButton, ContactButtonText } from './styles';
 import { RectButton } from 'react-native-gesture-handler';
 
 import heartOutlineIcon from '../../assets/images/icons/heart-outline.png';
@@ -64,43 +64,44 @@ const TeacherItem: React.FC<TeahcerItemProps> = ({ teacher, favorited }) => {
   }
 
   return (
-    <View style={styles.container}>
-      <View style={styles.profile}>
-        <Image style={styles.avatar} source={{ uri: teacher.avatar }} />
-        <View style={styles.profileInfo}>
-          <Text style={styles.name}>{teacher.name}</Text>
-          <Text style={styles.subject}>{teacher.subject}</Text>
-        </View>
-      </View>
+    <Container>
+      <Profile>
+        <Avatar source={{ uri: teacher.avatar }} />
+        <ProfileInfo>
+          <Name>{teacher.name}</Name>
+          <Subject>{teacher.subject}</Subject>
+        </ProfileInfo>
+      </Profile>
 
-      <Text style={styles.bio}>{teacher.bio}</Text>
+      <Bio>{teacher.bio}</Bio>
 
-      <View style={styles.footer}>
-        <Text style={styles.price}>
+      <Footer>
+        <Price>
           Preço/hora {'  '}
-          <Text style={styles.priceValue}>R$ {teacher.cost}</Text>
-        </Text>
-        <View style={styles.buttonsContainer}>
-          <RectButton
+          <PriceValue>R$ {teacher.cost}</PriceValue>
+        </Price>
+        <ButtonsContainer>
+          <FavoriteButton
             onPress={handleToggleFavorite}
-            style={[styles.favoriteButton, isFavorited ? styles.favorited : {}]}
+            style={isFavorited ? {
+              backgroundColor: '#e33d3d'
+            } : {}}
           >
             {isFavorited ? (
               <Image source={unfavoriteiIcon} />
             ) : (
               <Image source={heartOutlineIcon} />
             )}
-          </RectButton>
-          <RectButton
+          </FavoriteButton>
+          <ContactButton
             onPress={handleLinkToWhatsapp}
-            style={styles.contactButton}
           >
             <Image source={whatsappIcon} />
-            <Text style={styles.contactButtonText}>Entrar em contato</Text>
-          </RectButton>
-        </View>
-      </View>
-    </View>
+            <ContactButtonText>Entrar em contato</ContactButtonText>
+          </ContactButton>
+        </ButtonsContainer>
+      </Footer>
+    </Container>
   );
 };
 

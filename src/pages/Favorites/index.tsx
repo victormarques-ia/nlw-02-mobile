@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { View, ScrollView } from 'react-native';
 
 import { useFocusEffect } from '@react-navigation/native';
 
-import styles from './styles';
+import { Container, TeacherList} from './styles';
 import PageHeader from '../../components/PageHeader';
 import TeacherItem, { Teacher } from '../../components/TeacherItem';
 import AsyncStorage from '@react-native-community/async-storage';
@@ -27,10 +26,9 @@ const Favorites: React.FC = () => {
   );
 
   return (
-    <View style={styles.container}>
+    <Container>
       <PageHeader title="Meus proffys favoritos" />
-      <ScrollView
-        style={styles.teacherList}
+      <TeacherList
         contentContainerStyle={{
           paddingHorizontal: 16,
           paddingBottom: 16,
@@ -39,8 +37,8 @@ const Favorites: React.FC = () => {
         {favorites.map((teacher: Teacher) => (
           <TeacherItem key={teacher.id} teacher={teacher} favorited />
         ))}
-      </ScrollView>
-    </View>
+      </TeacherList>
+    </Container>
   );
 };
 

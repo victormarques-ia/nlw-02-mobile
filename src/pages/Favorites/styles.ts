@@ -1,13 +1,11 @@
-import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f0f0f7',
-  },
-  teacherList: {
-    marginTop: -40,
-  },
-});
+export const Container = styled.View`
+  flex: 1;
+  background-color: #f0f0f7;
+`;
 
-export default styles;
+export const TeacherList = styled.ScrollView`
+  margin-top: -40px;
+`;
+

@@ -1,57 +1,54 @@
-import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
+import { RectButton } from 'react-native-gesture-handler';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f0f0f7',
-  },
+export const Container = styled.View`
+  flex: 1;
+  background-color: #f0f0f7;
+`;
 
-  teacherList: {
-    marginTop: -40,
-  },
+export const TeacherListScrollView = styled.ScrollView`
+  margin-top: -40px;
+`;
 
-  searchForm: {
-    marginBottom: 24,
-  },
+export const SearchForm = styled.View`
+  margin-bottom: 24px;
+`;
 
-  label: {
-    color: '#d4c2ff',
-    fontFamily: 'Poppins_400Regular',
-  },
+export const Label = styled.Text`
+  color: #d4c2ff;
+  font-family: Poppins_400Regular;
+`;
 
-  inputGroup: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
+export const InputGroup = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+`;
 
-  inputBlock: {
-    width: '48%',
-  },
+export const InputBlock = styled.View`
+  width: 48%;
+`;
 
-  input: {
-    height: 54,
-    backgroundColor: '#fff',
-    borderRadius: 8,
-    justifyContent: 'center',
-    paddingHorizontal: 16,
-    marginTop: 4,
-    marginBottom: 16,
-  },
+export const Input = styled.TextInput`
+  height: 54px;
+  background-color: #fff;
+  border-radius: 8px;
+  justify-content: center;
+  padding: 0 16px;
+  margin-top: 4px;
+  margin-bottom: 16px;
+`;
 
-  submitButton: {
-    backgroundColor: '#04d361',
-    height: 56,
-    borderRadius: 8,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+export const SubmitButton = styled(RectButton)`
+  background-color: #04d361;
+    height: 56px;
+    border-radius: 8px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+`;
 
-  submitButtonText: {
-    color: '#fff',
-    fontFamily: 'Archivo_700Bold',
-    fontSize: 16,
-  },
-});
-
-export default styles;
+export const SubmitButtonText = styled.Text`
+  color: #fff;
+  font-family: Archivo_700Bold;
+  font-size: 16px;
+`;

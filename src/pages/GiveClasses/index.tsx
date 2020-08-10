@@ -1,8 +1,6 @@
 import React from 'react';
-import { View, ImageBackground, Text } from 'react-native';
-import { RectButton } from 'react-native-gesture-handler';
 
-import styles from './styles';
+import { Container, Content, Title, Description, OkButton, OkButtonText} from './styles';
 
 import giveClassesBgImage from '../../assets/images/give-classes-background.png';
 import { useNavigation } from '@react-navigation/native';
@@ -15,22 +13,21 @@ const GiveClasses: React.FC = () => {
   }
 
   return (
-    <View style={styles.container}>
-      <ImageBackground
+    <Container>
+      <Content
         resizeMode="contain"
         source={giveClassesBgImage}
-        style={styles.content}
       >
-        <Text style={styles.title}>Que ser um Proffy?</Text>
-        <Text style={styles.description}>
+        <Title>Que ser um Proffy?</Title>
+        <Description>
           Para começar, você precisa se cadastrar como professor na nossa
           plataforma web.
-        </Text>
-      </ImageBackground>
-      <RectButton onPress={handleNavigateBack} style={styles.okButton}>
-        <Text style={styles.okButtonText}>Tudo bem</Text>
-      </RectButton>
-    </View>
+        </Description>
+      </Content>
+      <OkButton onPress={handleNavigateBack}>
+        <OkButtonText>Tudo bem</OkButtonText>
+      </OkButton>
+    </Container>
   );
 };
 

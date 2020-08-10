@@ -1,62 +1,62 @@
-import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
+import { RectButton } from 'react-native-gesture-handler';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: '#8257e5',
-    padding: 40,
-  },
-  banner: {
-    width: '100%',
-    resizeMode: 'contain',
-  },
+export const Container = styled.View`
+  flex: 1;
+  justify-content: center;
+  background-color: #8257e5;
+  padding: 40px;
+`;
 
-  title: {
-    fontFamily: 'Poppins_400Regular',
-    color: '#fff',
-    fontSize: 20,
-    lineHeight: 30,
-    marginTop: 80,
-  },
+export const Banner = styled.Image`
+  width: 100%;
+  resize-mode: contain;
+`;
 
-  titleBold: {
-    fontFamily: 'Poppins_600SemiBold',
-  },
-  buttonsContainer: {
-    flexDirection: 'row',
-    marginTop: 40,
-    justifyContent: 'space-between',
-  },
+export const Title = styled.Text`
+  font-family: Poppins_400Regular;
+  color: #fff;
+  font-size: 20px;
+  line-height: 30px;
+  margin-top: 80px;
+`;
 
-  button: {
-    height: 150,
-    width: '48%',
-    borderRadius: 8,
-    padding: 24,
-    justifyContent: 'space-between',
-  },
+export const TitleBold = styled.Text`
+  font-family: Poppins_600SemiBold;
+`
+export const ButtonsContainer = styled.View`
+  flex-direction: row;
+  margin-top: 40px;
+  justify-content: space-between;
+`;
 
-  buttonPrimary: {
-    backgroundColor: '#9871f5',
-  },
+export const Button = styled(RectButton)`
+  height: 150px;
+  width: 48%;
+  border-radius: 8px;
+  padding: 24px;
+  justify-content: space-between;
+`;
 
-  buttonSecondary: {
-    backgroundColor: '#04d361',
-  },
-  buttonText: {
-    fontFamily: 'Archivo_700Bold',
-    color: '#fff',
-    fontSize: 20,
-  },
-  totalConnections: {
-    fontFamily: 'Poppins_400Regular',
-    color: '#d4c2ff',
-    fontSize: 12,
-    lineHeight: 20,
-    maxWidth: 140,
-    marginTop: 40,
-  },
-});
+export const ButtonPrimary = styled(Button)`
+  background-color: #9871f5;
+`;
 
-export default styles;
+export const ButtonSecondary = styled(Button)`
+  background-color: #04d361;
+`;
+
+export const ButtonText = styled.Text`
+  font-family: Archivo_700Bold;
+  color: #fff;
+  font-size: 20px;
+`;
+
+export const TotalConnections = styled.Text`
+  font-family: Poppins_400Regular;
+  color: #d4c2ff;
+  font-size: 12px;
+  line-height: 20px;
+  max-width: 140px;
+  margin-top: 40px;
+`;
